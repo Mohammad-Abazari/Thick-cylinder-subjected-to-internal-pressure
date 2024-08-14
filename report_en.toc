@@ -1,0 +1,12 @@
+\contentsline {section}{\numberline {1}Lame's problem-Thick cylinder subjected to internal pressure}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Plane stress}{1}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Plane stress problem with internal pressure}{3}{subsubsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.2}Plane strain}{3}{subsection.1.2}%
+\contentsline {section}{\numberline {2}MATLAB modeling}{5}{section.2}%
+\contentsline {section}{\numberline {3}Conclusions}{9}{section.3}%
+\contentsline {section}{\numberline {4}Appendices}{10}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Stress transformation from cartesian to cylindrical coordinates}{10}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}3D model}{13}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}2D model}{16}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}2D geometry generation with ABAQUS}{20}{subsection.4.4}%
+\contentsline {section}{References}{21}{section*.9}%

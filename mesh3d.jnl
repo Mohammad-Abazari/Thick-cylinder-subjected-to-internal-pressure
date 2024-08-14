@@ -1,0 +1,84 @@
+# -*- coding: mbcs -*-
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=200.0)
+mdb.models['Model-1'].sketches['__profile__'].CircleByCenterPerimeter(center=(
+    0.0, 0.0), point1=(80.0, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].CircleByCenterPerimeter(center=(
+    0.0, 0.0), point1=(40.0, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0, 40.0), point2=(
+    0.0, 80.0))
+mdb.models['Model-1'].sketches['__profile__'].VerticalConstraint(addUndoState=
+    False, entity=mdb.models['Model-1'].sketches['__profile__'].geometry[4])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[4])
+mdb.models['Model-1'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[3], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3])
+mdb.models['Model-1'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[4], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(40.0, 0.0), point2=(
+    80.0, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[5])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[5])
+mdb.models['Model-1'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2], point1=(
+    -81.5631713867188, 15.0807571411133))
+mdb.models['Model-1'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3], point1=(
+    -37.8232879638672, 4.84428405761719))
+mdb.models['Model-1'].Part(dimensionality=THREE_D, name='Part-1', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-1'].parts['Part-1'].BaseSolidExtrude(depth=1000.0, sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+# Save by NOMAD-NB on 2022_07_30-15.38.30; build 2022 2021_09_15-22.27.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.Model(name='tempModel-stlExport')
+mdb.models['tempModel-stlExport'].Part('Part-1', 
+    mdb.models['Model-1'].parts['Part-1'])
+mdb.models['tempModel-stlExport'].rootAssembly.Instance(dependent=ON, name=
+    'Part-1-1', part=mdb.models['tempModel-stlExport'].parts['Part-1'])
+mdb.models['tempModel-stlExport'].DisplayBody(controlPoints=None, instance=
+    mdb.models['tempModel-stlExport'].rootAssembly.instances['Part-1-1'], name=
+    'Constraint-1')
+mdb.Job(model='tempModel-stlExport', name='tempJobModel-stlExport')
+mdb.ModelFromInputFile(inputFileName='C:\\temp\\tempJobModel-stlExport.inp', 
+    name='tempJobModel-stlExport')
+del mdb.jobs['tempJobModel-stlExport']
+del mdb.models['tempJobModel-stlExport']
+del mdb.models['tempModel-stlExport']
+# Save by NOMAD-NB on 2022_07_30-15.40.29; build 2022 2021_09_15-22.27.30 176069
